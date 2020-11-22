@@ -1,0 +1,29 @@
+{% extends '_templates/base.njk' %}
+
+{% block page_title %}Queen Discography{% endblock %}
+
+{% block page_description %}Queen's Vast Discography{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>QUEEN DISCOGRAPHY</h1>
+  <p>Have you ever just been walking down the street or going about your business when all of the sudden...</p>
+  <p>"MAMAA....JUST KILLED A MAN!"</p>
+  <P>...is heard being belted out by some passerby?  Or perhaps by a giant class singalong where everyone seems to already know the words to this SIX MINUTE song?  Fear not, they did not just commit first degree murder, unless you count the fact that they are killing the tunes!  Study more of Queen's iconic music with a full list of their albulms here, so next time someone breaks out in song next to you, you're prepared.</p>
+
+  <div class="row">
+    {% for disc in queen.discography %}
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <div class="card-body">
+            <img class="card-img-top" src="img/img-queen/discs/{{ disc.slug }}.png" alt="">
+            <p class="card-text">
+            <h3><a href="{{ disc.url }}" target="_blank">{{ disc.title }}</a></h3>
+            <p>{{ disc.year }}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,30 +1,30 @@
 {% extends '_templates/base.njk' %}
 
-{% block page_title %}Index page title{% endblock %}
+{% block page_title %}Queen Home Page{% endblock %}
 
-{% block page_description %}The index search description for this page goes here.{% endblock %}
+{% block page_description %}Queen Home Page{% endblock %}
 
 {% block content %}
 <div class="container">
-  <h1>Main headline here</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in facilisis velit, aliquam congue dui. Mauris id mi quam. Nam enim leo, bibendum vel efficitur id, elementum malesuada est. Pellentesque interdum tempus eros nec iaculis. Quisque ac est dictum, vehicula nulla quis, condimentum dui.</p>
-  <h2>Library books loop</h2>
-  <p>This loops through data that came from a Google Docs example.</p>
+  <h1>QUEEN, THE BAND</h1>
+  <p>This is the info about the Queen page.  There is so much to learn about Queen.  Did you know?  Queen isn't actually a band where all the members are female royalty!  They are actually an incredible popular rock band and (ocassionally) operatic choir!  Wow!  Who knew, right?  Well, go ahead and look through the rest of this site, and you'll find out all about Queen and their music legacy!</p>
+  <img src="img/img-queen/queen-band-early.jpg" class="img-fluid" alt="Responsive image">
+
+  <h1>MEET THE MEMBERS</h1>
+
   <div class="row">
-    {% for book in library.books %}
-      <div class="col">
-        <img src="img/{{ book.slug }}.jpg" alt="" class="img-fluid">
-        <h3><a href="books/{{ book.slug }}.html">{{ book.title }}</a></h3>
+    {% for member in queen.members %}
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <div class="card-body">
+            <img class="card-img-top" src="img/img-queen/members/{{ member.slug }}-bw.jpg" alt="">
+            <p class="card-text">
+            <h3><a href="members/{{ member.slug }}.html" target="_blank">{{ member.name }}</a></h3>
+            <p>{{ member.name}}, {{ member.instruments }}, {{ member.tenure }} {{ member.birthplace }}</p>
+          </div>
+        </div>
       </div>
     {% endfor %}
   </div>
-  <h2>Bookstores loop</h2>
-  <p>This loops through data that came from a Google Sheet example.</p>
-  <hr>
-  {% for store in bookstores.stores %}
-    <h3><a href="{{ store.url }}" target="_blank">{{ store.name }}</a></h3>
-    <p>{{ store.address}}, {{ store.city }}, {{ store.state }} {{ store.zip }}</p>
-    <hr>
-  {% endfor %}
 </div>
 {% endblock %}

@@ -19,7 +19,13 @@
 // @import "../../node_modules/bootstrap/scss/mixins"; 
 
 // Import partials
+@import url('https://fonts.googleapis.com/css2?family=Castoro&display=swap');
+
 @import "nav";
+
+h1, h2, h3, p {
+  font-family: 'Castoro', serif;
+}
 
 h3 {
   font-size: 1.5rem;
