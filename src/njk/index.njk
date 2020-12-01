@@ -6,21 +6,27 @@
 
 {% block content %}
 <div class="container">
-  <h1>QUEEN, THE BAND</h1>
-  <p>This is the info about the Queen page.  There is so much to learn about Queen.  Did you know?  Queen isn't actually a band where all the members are female royalty!  They are actually an incredible popular rock band and (ocassionally) operatic choir!  Wow!  Who knew, right?  Well, go ahead and look through the rest of this site, and you'll find out all about Queen and their music legacy!</p>
-  <img src="img/img-queen/queen-band-early.jpg" class="img-fluid" alt="Responsive image">
-
-  <h1>MEET THE MEMBERS</h1>
-
+  <div class="text-center">
+    <h1>QUEEN, THE BAND</h1>
+    <p>This is the info about the Queen page.  There is so much to learn about Queen.  Did you know?  Queen isn't actually a band where all the members are female royalty!  They are actually an incredible popular rock band and (ocassionally) operatic choir!  Wow!  Who knew, right?  Well, go ahead and look through the rest of this site, and you'll find out all about Queen and their music legacy!</p>
+      <img src="img/img-queen/queen-band-early.jpg" class="img-fluid" alt="Responsive image">
+    <h1 class="text-center">MEET THE MEMBERS</h1>
+  </div>
   <div class="row">
     {% for member in queen.members %}
       <div class="col-sm-6 col-md-4 col-lg-3">
-        <div class="card">
-          <div class="card-body">
-            <img class="card-img-top" src="img/img-queen/members/{{ member.slug }}-bw.jpg" alt="">
-            <p class="card-text">
-            <h3><a href="members/{{ member.slug }}.html" target="_blank">{{ member.name }}</a></h3>
-            <p>{{ member.name}}, {{ member.instruments }}, {{ member.tenure }} {{ member.birthplace }}</p>
+        <div class="card border-dark mb-3">
+          <div class="card-body bg-light">
+            <div class="text-center">
+              <img class="card-img-top rounded" src="img/img-queen/members/{{ member.slug }}-bw.jpg" alt="">
+              <p class="card-text">
+              <h3><a href="members/{{ member.slug }}.html" target="_blank" class="text-uppercase">{{ member.name }}</a></h3>
+              <div class="text-left">
+                <p><span class="bold">Position:  </span><span class="italic">{{ member.instruments }}</span></p>
+                <p><span class="bold">Lived:  </span><span class="italic">{{ member.tenure }}</span></p>
+                <p><span class="bold">Hailing from:  </span> <span class="italic">{{ member.birthplace }}</span></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

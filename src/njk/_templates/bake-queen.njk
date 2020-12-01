@@ -9,12 +9,20 @@
 {% block content %}
   <article class="container">
     <div class="row">
-      <div class="col-sm-8">
-          <h1>{{ name }}</h1>
-          <p>{{ description | safe }}</p>
+      <div class="col-sm-6 order-sm-12">
+          <img src="../img/img-queen/members/{{ slug }}-color.jpg" alt="{{ member.name }}" class="img-fluid rounded">
       </div>
-      <div class="col-sm-4">
-          <img src="../img/img-queen/members/{{ slug }}-color.jpg" alt="" class="img-fluid">
+      <div class="col-sm-6 order-sm-1">
+          <h1 class="text-center">
+            <span>
+              <hr class="solid">
+            </span>
+            {{ name }}
+            <span>
+              <hr class="solid">
+            </span>
+          </h1>
+          <p>{{ description | safe }}</p>
       </div>
     </div>
   </article>
